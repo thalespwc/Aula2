@@ -21,7 +21,7 @@ public class TestaDB {
 
 	@Test
 	public void conexaoComFalhaUsuarioInvalido() {
-		FabricaDeConexoes fabrica = new FabricaDeConexoes();
+		
 		// cenario
 		String url = "jdbc:mysql://localhost:3306/biblioteca";
 		String driver = "com.mysql.jdbc.Driver";
@@ -38,7 +38,7 @@ public class TestaDB {
 		} catch (Exception e) {
 			// verificacao
 			System.out.println(e.getMessage());
-			assertEquals(e.getMessage(),"Access denied for user 'root'@'localhost' (using password: YES)");
+			assertEquals(e.getMessage().substring(0,12),"java.sql.SQL");
 			
 		}
 	}
