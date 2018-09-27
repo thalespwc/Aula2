@@ -8,7 +8,11 @@ import com.fatec.sce.model.ConfiguraDB;
 import com.fatec.sce.model.FabricaDeConexoes;
 
 public class TestaDB {
-
+	/**
+	 * Objetivo - verificar o comportamento do sistema na conexao ao DB 
+	 * com configuracao valida
+	 * Pré-condição - a configuracao default da fabrica de conexoes é valida
+	 */
 	@Test
 	public void quandoConectaComOBancoRetornaOK() {
 		// cenario
@@ -18,7 +22,11 @@ public class TestaDB {
 		// verificacao
 		assertNotNull(fabrica.getConnection());
 	}
-
+	/**
+	 * Objetivo - verificar o comportamento do sistema na conexao ao DB 
+	 * com senha de acesso invalida
+	 * Pré-condição - a senha cadastrada é "alunofatec"
+	 */
 	@Test
 	public void conexaoComFalhaUsuarioSenhaInvalida() {
 		
@@ -26,7 +34,7 @@ public class TestaDB {
 		String url = "jdbc:mysql://localhost:3306/biblioteca";
 		String driver = "com.mysql.jdbc.Driver";
 		String usuario = "root";
-		String senha = "alunosfatec";
+		String senha = "alunosfatec"; //senha errada
 		FabricaDeConexoes fabricaDeConexoes = null;
 		
 		ConfiguraDB configuraDB = new ConfiguraDB(url, driver, usuario, senha);
