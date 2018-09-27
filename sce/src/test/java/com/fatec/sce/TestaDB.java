@@ -28,7 +28,7 @@ public class TestaDB {
 	 * Pré-condição - a senha cadastrada é "alunofatec"
 	 */
 	@Test
-	public void conexaoComFalhaUsuarioSenhaInvalida() {
+	public void quandoConectaComSenhaInvalida_SQLException() {
 		
 		// cenario
 		String url = "jdbc:mysql://localhost:3306/biblioteca";
