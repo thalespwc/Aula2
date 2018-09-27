@@ -20,7 +20,7 @@ public class TestaDB {
 	}
 
 	@Test
-	public void conexaoComFalhaUsuarioInvalido() {
+	public void conexaoComFalhaUsuarioSenhaInvalida() {
 		
 		// cenario
 		String url = "jdbc:mysql://localhost:3306/biblioteca";
@@ -38,7 +38,7 @@ public class TestaDB {
 		} catch (Exception e) {
 			// verificacao
 			System.out.println(e.getMessage());
-			assertEquals(e.getMessage().substring(0,12),"java.sql.SQL");
+			assertEquals(e.getMessage(),"java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)");
 			
 		}
 	}
