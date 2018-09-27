@@ -23,19 +23,23 @@ public class TestaDB {
 	public void conexaoComFalhaUsuarioInvalido() {
 		FabricaDeConexoes fabrica = new FabricaDeConexoes();
 		// cenario
-		String url = "jdbc:mysql://mysql8.db4free.net:3306/sceweb";
+		String url = "jdbc:mysql://localhost:3306/biblioteca";
 		String driver = "com.mysql.jdbc.Driver";
 		String usuario = "root";
 		String senha = "alunosfatec";
 		FabricaDeConexoes fabricaDeConexoes = null;
-		// acao
+		
 		ConfiguraDB configuraDB = new ConfiguraDB(url, driver, usuario, senha);
+		fabricaDeConexoes = new FabricaDeConexoes(configuraDB);
 		try {
-			fabricaDeConexoes = new FabricaDeConexoes(configuraDB);
+			//acao
+			fabricaDeConexoes.getConnection();
 			fail("deveria falhar");
 		} catch (Exception e) {
 			// verificacao
-			assertNull(fabricaDeConexoes.getConnection());
+			System.out.println(e.getMessage());
+			assertEquals(e.getMessage(),"Access denied for user 'root'@'localhost' (using password: YES)");
+			
 		}
 	}
 
