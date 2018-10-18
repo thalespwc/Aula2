@@ -34,7 +34,7 @@ public class TestaDB {
 		String url = "jdbc:mysql://localhost:3306/biblioteca";
 		String driver = "com.mysql.jdbc.Driver";
 		String usuario = "root";
-		String senha = "alunosfatec"; //senha errada
+		String senha = "alunosfatec"; //senha invalida
 		FabricaDeConexoes fabricaDeConexoes = null;
 		
 		ConfiguraDB configuraDB = new ConfiguraDB(url, driver, usuario, senha);

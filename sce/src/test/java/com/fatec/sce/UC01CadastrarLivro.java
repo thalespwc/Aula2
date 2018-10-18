@@ -1,15 +1,13 @@
 package com.fatec.sce;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import com.fatec.sce.model.Livro;
 
-
-
 public class UC01CadastrarLivro {
-
+/**
+ * Objetivo - verificar o comportamento da aplicacao na inclusao de dados invalidos
+ */
 	@Test
 	public void CT01CadastrarLivroComDadosValidos() {
 		try {
